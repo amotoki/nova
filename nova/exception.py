@@ -642,6 +642,19 @@ class FloatingIpNotFoundForHost(FloatingIpNotFound):
     message = _("Floating ip not found for host %(host)s.")
 
 
+class FloatingIpMultipleFoundForAddress(NovaException):
+    message = _("Multiple floating ips are found for address %(address)s.")
+
+
+class FloatingIpMultipleFoundForPort(NovaException):
+    message = _("Multiple floating ips are found for port %(id)s.")
+
+
+class FloatingIpPoolNotFound(NotFound):
+    message = _("Floating ip pool not found.")
+    safe = True
+
+
 class NoMoreFloatingIps(FloatingIpNotFound):
     message = _("Zero floating ips available.")
     safe = True
